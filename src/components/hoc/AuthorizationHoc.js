@@ -5,6 +5,7 @@ export default AuthorizationView =>
     state = {
       data: []
     };
+
     login() {
       this.context.store.dispatch({
         type: 'SET_AUTH',
@@ -13,6 +14,7 @@ export default AuthorizationView =>
         }
       });
     }
+
     componentDidMount() {
       this.setState({
         data: {
@@ -20,12 +22,12 @@ export default AuthorizationView =>
         }
       });
     }
+
     render() {
-      return <AuthorizationView data={this.state.data} login={this.login.bind(this)}/>
+      return <AuthorizationView
+        {...this.props}
+        data={this.state.data}
+        login={this.login.bind(this)}
+      />
     }
   };
-
-
-
-
-

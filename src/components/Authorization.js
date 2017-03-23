@@ -1,18 +1,5 @@
 import AuthorizationHoc from './hoc/AuthorizationHoc';
 import AuthorizationWeb from './web/AuthorizationWeb';
-
-let Authorization = AuthorizationHoc(AuthorizationWeb);
-
-// -------
-import React from 'react';
-import {connect} from 'react-redux';
-Authorization.contextTypes = {
-  store: React.PropTypes.object
-};
-const mapStateToProps = state => (state);
-Authorization = connect(
-  mapStateToProps
-)(Authorization);
-// -------
-
+import reduxConnect from './utils/reduxConnect';
+let Authorization = reduxConnect(AuthorizationHoc(AuthorizationWeb));
 export default Authorization;
