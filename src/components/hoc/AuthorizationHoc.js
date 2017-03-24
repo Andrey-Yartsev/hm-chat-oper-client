@@ -1,61 +1,48 @@
 import React from 'react';
-import request from '../../utils/request';
+import login from '../../actions/login';
+import logout from '../../actions/logout';
 
 export default AuthorizationView =>
   class extends React.Component {
     state = {
-      data: []
+      login: '',
+      password: ''
     };
 
     loginChanged(login) {
-      this.context.store.dispatch({
-        type: 'CHANGE_LOGIN',
+      this.setState({
         login: login
       });
     }
 
     passwordChanged(password) {
-      this.context.store.dispatch({
-        type: 'CHANGE_PASSWORD',
+      this.setState({
         password: password
       });
     }
 
     login() {
-      request(this.context.store, {
-        method: 'post',
-        path: 'operator/authorize',
-        data: {
-          login: this.props.login.login,
-          password: this.props.login.password
-        }
-      }).then((r) => {
-        this.context.store.dispatch({
-          type: 'SET_AUTH',
-          token: r.data.token
-        });
-      }).catch((e) => {
+      login(null, (error) => {
         this.setState({
-          data: {
-            error: 'Неверный логин или пароль'
-          }
+          error: error
         });
-      });
+      })(
+        this.context.store.dispatch,
+        this.state.login,
+        this.state.password
+      );
     }
 
-    componentDidMount() {
-      this.setState({
-        data: {
-          asd: 123
-        }
-      });
+    logout() {
+      logout(this.context.store.dispatch);
     }
 
     render() {
       return <AuthorizationView
         {...this.props}
-        data={this.state.data}
+        state={this.state}
         login={this.login.bind(this)}
+        logout={this.logout.bind(this)}
         loginChanged={this.loginChanged.bind(this)}
         passwordChanged={this.passwordChanged.bind(this)}
       />

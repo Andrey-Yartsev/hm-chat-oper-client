@@ -15,29 +15,34 @@ class AuthorizationWeb extends React.Component {
     this.props.login();
   }
 
+  logout(event) {
+    event.preventDefault();
+    this.props.logout();
+  }
+
   render() {
     if (this.props.auth.token) {
       return <div>
         <p>Вы авторизованы</p>
+        <a href="#" onClick={this.logout.bind(this)}>Выйти</a>
       </div>;
     }
     return <div>
       {
-        this.props.data.error ?
-          this.props.data.error : ''
+        this.props.state.error ?
+          this.props.state.error : ''
       }
       <p>
         <input type="text" name="login"
                onChange={this.loginChanged.bind(this)}
-               value={this.props.login.login}
+               value={this.props.state.login}
         />
       </p>
       <p><input type="password" name="password"
                 onChange={this.passwordChanged.bind(this)}
-                value={this.props.login.password}
+                value={this.props.state.password}
       /></p>
       <a href="#" onClick={this.login.bind(this)}>Login</a>
-      {this.props.data.asd}
     </div>;
   }
 }
