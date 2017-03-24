@@ -1,19 +1,17 @@
 import authRequest from '../../utils/authRequest';
 
-export default () => {
-  return (state, text) => {
+export default (success, error) => {
+  return (state, lineId, text) => {
     authRequest(state, {
       method: 'put',
-      path: 'operator/lines/123/messages',
-      text: text
+      path: 'operator/lines/' + lineId + '/messages',
+      data: {
+        text
+      }
     }).then((r) => {
-      alert('ok');
-      //success();
+      success(r);
     }).catch((e) => {
-      alert('not');
       //error();
-      // e.response.status
-      // e.response.data.message
     });
   }
 };

@@ -18,7 +18,10 @@ class LineRowWeb extends React.Component {
       {
         this.props.isNew ?
           <p><a href="#" onClick={this.pick.bind(this, this.props._id)}>Взять</a></p> :
-          <p><a href="#" onClick={this.drop.bind(this, this.props._id)}>Отдать</a></p>
+          <p>
+            <a href="#" onClick={this.drop.bind(this, this.props._id)}>Отдать</a> |&nbsp;
+            <a href={'/chat/' + this.props._id}>Войти</a>
+          </p>
       }
       {this.props.description ? <p><i>{this.props.description}</i></p> : ''}
     </li>
