@@ -1,7 +1,7 @@
 export default (dispatch) => {
-  const token = window.localStorage.getItem('token');
-  dispatch({
-    type: 'SET_AUTH',
-    token: token
-  });
+  let auth = window.localStorage.getItem('auth');
+  if (!auth) return;
+  auth = JSON.parse(auth);
+  auth.type = 'SET_AUTH';
+  dispatch(auth);
 };

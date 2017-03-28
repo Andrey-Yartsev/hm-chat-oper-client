@@ -1,0 +1,21 @@
+.menu a {
+display: inline-block;
+padding: 23px 15px;
+text-shadow: 1px 1px 0 rgba(20, 80, 104, .6);
+font-size: 18px;
+}
+
+.menu a:hover {
+text-decoration: underline;
+}
+
+ul.menu {
+padding: 0;
+margin: 0 0 0 200px;
+display: inline-block;
+}
+
+.menu li {
+display: inline-block;
+list-style: none;
+}

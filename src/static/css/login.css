@@ -1,0 +1,47 @@
+.loginPage {
+background:url(../img/loginBg.png) no-repeat;
+background-size: 100%;
+}
+
+.loginPage .block {
+background: url(../img/lifeline.png) no-repeat 0px 20px;
+background-size: 300px;
+height: 100%;
+}
+.loginForm {
+color: #fff;
+width: 300px;
+margin-top: 25px;
+margin-left: 330px;
+}
+.loginForm input {
+width: 100%;
+border-radius: 8px;
+margin-bottom: 5px;
+border: 2px solid #cfcdcf;
+padding: 10px 10px;
+font-size: 20px;
+box-sizing: border-box;
+}
+.loginForm .button {
+font-size: 20px;
+}
+.loginPage .logo {
+width: 150px;
+height: 50px;
+background: url(../img/logo.png) no-repeat;
+background-size: contain;
+}
+.loginPage .title span {
+vertical-align: bottom;
+}
+.loginPage span {
+display: inline-block;
+}
+
+.loginPage .operator {
+font-size: 20px;
+margin-bottom: 12px;
+margin-left: 5px;
+}
+

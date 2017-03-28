@@ -14,10 +14,14 @@ export default (success, error) => {
         error('NO_TOKEN');
         return;
       }
-      window.localStorage.setItem('token', r.data.token);
+      window.localStorage.setItem('auth', JSON.stringify({
+        token: r.data.token,
+        login
+      }));
       dispatch({
         type: 'SET_AUTH',
-        token: r.data.token
+        token: r.data.token,
+        login
       });
       if (success) success(r.data.token);
     }).catch((e) => {

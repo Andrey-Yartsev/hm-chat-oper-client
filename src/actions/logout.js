@@ -1,5 +1,5 @@
 export default (dispatch) => {
-  window.localStorage.removeItem('token');
+  window.localStorage.removeItem('auth');
   dispatch({
     type: 'LOGOUT'
   });
