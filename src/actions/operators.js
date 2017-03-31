@@ -1,10 +1,10 @@
-import authRequest from '../../utils/authRequest';
+import authRequest from '../utils/authRequest';
 
 export default (success, error) => {
-  return (state, isNew) => {
+  return (state) => {
     authRequest(state, {
       method: 'get',
-      path: 'operator/lines' + (isNew ? '/new' : '')
+      path: 'operator/operators'
     }).then((r) => {
       success(r.data);
     }).catch((e) => {

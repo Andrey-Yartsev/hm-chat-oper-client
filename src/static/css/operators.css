@@ -1,0 +1,5 @@
+#operatorsPopup .list li {
+padding-left: 80px;
+background: url(../img/operator.png) no-repeat 5px -5px;
+background-size: 70px;
+}

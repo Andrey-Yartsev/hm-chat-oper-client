@@ -4,8 +4,8 @@ background-size: 100%;
 }
 
 .loginPage .block {
-background: url(../img/lifeline.png) no-repeat 0px 20px;
-background-size: 300px;
+background: url(../img/lifeline.png) no-repeat 70px 70px;
+background-size: 200px;
 height: 100%;
 }
 .loginForm {

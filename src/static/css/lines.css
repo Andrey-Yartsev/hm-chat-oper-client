@@ -1,0 +1,35 @@
+.cols {
+display: table;
+width: 100%;
+}
+.col {
+width: 50%;
+display: table-cell;
+vertical-align: top;
+box-sizing: border-box;
+}
+.col {
+padding-right: 20px;
+}
+.lines .newMessagesCount {
+width: 25px;
+height: 25px;
+text-align: center;
+line-height: 23px;
+border-radius: 20px;
+color: #fff;
+background: #e59e1c;
+position: absolute;
+top: -5px;
+right: 0;
+animation: fadein 1s;
+}
+
+@keyframes fadein {
+from {
+opacity:0;
+}
+to {
+opacity:1;
+}
+}

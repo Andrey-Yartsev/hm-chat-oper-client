@@ -2,28 +2,49 @@ import React from 'react';
 
 class LineRowWeb extends React.Component {
 
-  pick(id, proxy, event) {
-    event.stopPropagation();
+  pick(id) {
     this.props.pick(id);
   }
 
-  drop(id, proxy, event) {
-    event.stopPropagation();
+  drop(id) {
     this.props.drop(id);
   }
 
+  onOperatorsPopupOpening(id) {
+    this.props.onOperatorsPopupOpening(id);
+  }
+
   render() {
+    let unread = false;
+    if (this.props.count) {
+      unread = this.props.count;
+    } else if (this.props.unread) {
+      unread = '*';
+    }
     return <li>
-      ID: {this.props._id}
+      {this.props.description ? <div className="name">{this.props.description}</div> : ''}
+      {unread ? <div className="newMessagesCount">{unread}</div> : ''}
       {
         this.props.isNew ?
-          <p><a href="#" onClick={this.pick.bind(this, this.props._id)}>Взять</a></p> :
-          <p>
-            <a href="#" onClick={this.drop.bind(this, this.props._id)}>Отдать</a> |&nbsp;
-            <a href={'/chat/' + this.props._id}>Войти</a>
-          </p>
+          <div className="buttons">
+            <span href="#"
+                onClick={this.pick.bind(this, this.props._id)}
+                className="button"
+          >Взять</span></div> :
+          <div className="buttons">
+            <a href={'/client/chat/' + this.props._id}
+               className="button blue"
+            >Войти</a>
+            <span href="#operatorsPopup"
+               onClick={this.onOperatorsPopupOpening.bind(this, this.props._id)}
+               className="button blue"
+            >Пригласить</span>
+            <span href="#"
+               onClick={this.drop.bind(this, this.props._id)}
+               className="button"
+            >Отдать</span>
+          </div>
       }
-      {this.props.description ? <p><i>{this.props.description}</i></p> : ''}
     </li>
   }
 }

@@ -11,7 +11,7 @@ export default (success, error) => {
     }).then((r) => {
       success(r);
     }).catch((e) => {
-      //error();
+      // error();
     });
   }
 };

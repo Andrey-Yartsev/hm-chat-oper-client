@@ -39,15 +39,3 @@ margin-right: 7px;
 .pageWrapper {
 height: 100%;
 }
-.button {
-text-decoration: none;
-text-align: center;
-display: block;
-border: 0;
-color: #fff;
-padding: 10px;
-background: #eb0000;
-border-bottom: 7px solid #ae0000;
-border-radius: 8px;
-margin-top: 10px;
-}

@@ -1,9 +1,11 @@
-const dummy = (state = {}, action) => {
+export default (state = {}, action) => {
 
   switch (action.type) {
     case 'SET_AUTH':
-      delete action.type;
-      return Object.assign({}, state, action);
+      return Object.assign({}, state, {
+        token: action.token,
+        login: action.login
+      });
     case 'LOGOUT':
       let _state = Object.assign({}, state);
       delete _state.token;
@@ -13,5 +15,3 @@ const dummy = (state = {}, action) => {
   }
 
 };
-
-export default dummy

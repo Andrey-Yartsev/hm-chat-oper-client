@@ -7,12 +7,6 @@ export default (success, error) => {
       path: 'operator/lines/' + id + '/pick'
     }).then((r) => {
       success(r.data);
-    }).catch((e) => {
-      if (e.response.status === 404) {
-        error('Что-то не так');
-      } else {
-        error(e.response.data.message);
-      }
     });
   };
 };

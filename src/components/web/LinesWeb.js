@@ -11,6 +11,14 @@ class LinesWeb extends React.Component {
     this.props.drop(id);
   }
 
+  invite(id) {
+    this.props.invite(id);
+  }
+
+  onOperatorsPopupOpening(id) {
+    this.props.onOperatorsPopupOpening(id);
+  }
+
   render() {
     const rows = [];
     for (let line of this.props.lines) {
@@ -18,11 +26,15 @@ class LinesWeb extends React.Component {
         isNew={this.props.isNew}
         pick={this.pick.bind(this)}
         drop={this.drop.bind(this)}
+        onOperatorsPopupOpening={this.onOperatorsPopupOpening.bind(this)}
         key={line._id}
         {...line}
       />);
     }
-    return <ul>{rows}</ul>;
+    return <div className="col">
+      <h2>{this.props.title}</h2>
+      <ul>{rows}</ul>
+    </div>;
   }
 
 }

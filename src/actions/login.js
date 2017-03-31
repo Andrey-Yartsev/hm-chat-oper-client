@@ -1,4 +1,5 @@
 import request from '../utils/request';
+import fetchInvites from './fetchInvites';
 
 export default (success, error) => {
   return (dispatch, login, password) => {
@@ -23,6 +24,7 @@ export default (success, error) => {
         token: r.data.token,
         login
       });
+      fetchInvites(dispatch, r.data.token);
       if (success) success(r.data.token);
     }).catch((e) => {
       if (e.response.status === 404) {

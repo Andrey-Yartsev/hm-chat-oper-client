@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
-import login from './login';
+import messages from './messages';
+import lines from './lines';
+import invites from './invites';
 
 export default combineReducers({
   auth,
-  login
+  messages,
+  lines,
+  invites
 })
