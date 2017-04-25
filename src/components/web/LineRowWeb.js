@@ -27,7 +27,7 @@ class LineRowWeb extends React.Component {
       {
         this.props.isNew ?
           <div className="buttons">
-            <span href="#"
+            <span
                 onClick={this.pick.bind(this, this.props._id)}
                 className="button"
           >Взять</span></div> :
@@ -35,11 +35,11 @@ class LineRowWeb extends React.Component {
             <a href={'/client/chat/' + this.props._id}
                className="button blue"
             >Войти</a>
-            <span href="#operatorsPopup"
+            <a href="#operatorsPopup"
                onClick={this.onOperatorsPopupOpening.bind(this, this.props._id)}
                className="button blue"
-            >Пригласить</span>
-            <span href="#"
+            >Пригласить</a>
+            <span
                onClick={this.drop.bind(this, this.props._id)}
                className="button"
             >Отдать</span>

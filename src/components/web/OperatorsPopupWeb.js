@@ -6,6 +6,7 @@ class OperatorsPopupWeb extends React.Component {
 
   invite(id) {
     this.props.invite(id);
+    window.location = '#';
   }
 
   render() {
@@ -15,7 +16,7 @@ class OperatorsPopupWeb extends React.Component {
         <li key={operator._id}>
           <div className="name">{operator.profile.name}</div>
           <div className="buttons">
-            <span href="#" className="button"
+            <span className="button"
                onClick={this.invite.bind(this, operator._id)}
             >Пригласить</span>
           </div>

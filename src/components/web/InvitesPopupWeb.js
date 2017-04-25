@@ -7,13 +7,14 @@ class OperatorsPopupWeb extends React.Component {
 
   pick(id) {
     this.props.pick(id);
+    window.location = '#';
   }
 
   render() {
     const rows = [];
     for (let invite of this.props.invites) {
       rows.push(<li key={invite._id}>
-        <span href="#" className="button"
+        <span className="button"
            onClick={this.pick.bind(this, invite._id)}
         >Взять {invite.description}</span>
       </li>);
