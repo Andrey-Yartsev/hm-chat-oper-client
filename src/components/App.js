@@ -32,6 +32,16 @@ class App extends Component {
     auth(this.context.store.dispatch);
     this.context.store.dispatch({type: 'INIT_MESSAGES'});
     this.context.store.dispatch({type: 'INIT_LINES'});
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!Notification) {
+        alert('Desktop notifications not available in your browser. Try Chromium.');
+        return;
+      }
+      if (Notification.permission !== "granted")
+        Notification.requestPermission();
+    });
+
   }
 
   renderInvitesPopup() {

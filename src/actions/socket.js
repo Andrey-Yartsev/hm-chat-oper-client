@@ -1,6 +1,7 @@
 import config from '../config';
 import fetchInvites from './fetchInvites';
 import initLines from './lines/init';
+import notify from './notify';
 
 export default (dispatch, operToken) => {
   const socket = require('socket.io-client')('http://' + config.serverHost + ':' + config.socketPort);
@@ -12,6 +13,7 @@ export default (dispatch, operToken) => {
     });
   });
   socket.on('newMessage', function (message) {
+    // notify(message.text);
     dispatch({
       type: 'NEW_MESSAGE',
       message

@@ -23,7 +23,8 @@ export default (state = {}, action) => {
       });
     case 'ADD_LINE_NEW_MESSAGES_COUNT':
       newState = Object.assign({}, state);
-      const line = getLine(newState.lines, action.lineId);
+      let line = getLine(newState.lines, action.lineId);
+      if (!line) line = getLine(newState.newLines, action.lineId);
       if (!line) throw new Error('line not found');
       if (!line['count']) {
         line.count = 1;
