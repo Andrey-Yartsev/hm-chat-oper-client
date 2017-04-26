@@ -9,6 +9,7 @@ import reduxConnect from '../utils/reduxConnect';
 import auth from '../actions/auth';
 import pickLine from '../actions/lines/pick';
 import initLines from '../actions/lines/init';
+import fetchInvites from '../actions/fetchInvites';
 
 import '../static/css/main.css';
 import '../static/css/button.css';
@@ -48,6 +49,10 @@ class App extends Component {
   pick(id) {
     pickLine(() => {
       this.initLines();
+      fetchInvites(
+        this.context.store.dispatch,
+        this.context.store.getState().auth.token
+      );
     })(this.context.store.getState(), id);
   }
 
