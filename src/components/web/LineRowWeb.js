@@ -23,7 +23,8 @@ class LineRowWeb extends React.Component {
     }
     return <li>
       {this.props.description ? <div className="name">{this.props.description}</div> : ''}
-      {unread ? <div className="newMessagesCount">{unread}</div> : ''}
+      {unread && this.props.lastMessage ? <div className="newMessagesCount">{unread}</div> : ''}
+      {unread && this.props.lastMessage && this.props.lastMessage.text ? <p>{this.props.lastMessage.text}</p> : ''}
       {
         this.props.isNew ?
           <div className="buttons">
