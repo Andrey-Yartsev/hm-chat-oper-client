@@ -1,8 +1,8 @@
 .menu a {
 display: inline-block;
-padding: 23px 15px;
+padding: 15px 15px;
 text-shadow: 1px 1px 0 rgba(20, 80, 104, .6);
-font-size: 18px;
+font-size: 14px;
 }
 
 .menu a:hover {

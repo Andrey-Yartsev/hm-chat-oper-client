@@ -1,5 +1,5 @@
 export default {
-  serverHost: '95.79.46.186',
+  serverHost: 'localhost',
   serverPort: 8000,
   socketPort: 3000
 };

@@ -1,0 +1,70 @@
+import React from 'react';
+
+
+export default (WrapperView, LinesView) =>
+    class extends React.Component {
+
+        // state = {
+        //   operators: [],
+        // };
+
+        // componentWillMount() {
+        //  this.fetchOperators();
+        // }
+        //
+        // renderOperatorsPopup() {
+        //   if (!this.state.lineId) return '';
+        //   return <OperatorsPopupView
+        //     operators={this.state.operators}
+        //     invite={this.invite.bind(this)}
+        //   />
+        // }
+
+        // {this.renderOperatorsPopup()}
+        render() {
+            return <WrapperView className="cols">
+                <WrapperView className="colLines">
+                    <LinesBarView />
+                    <DefaultView />
+                </WrapperView>
+            </WrapperView>;
+        }
+
+        // pick(id) {
+        //     pickLine(() => {
+        //         this.initLines();
+        //     })(this.context.store.getState(), id);
+        // }
+        //
+        // drop(id) {
+        //     dropLine(() => {
+        //         this.initLines();
+        //     }, (error) => {
+        //         alert(error);
+        //     })(this.context.store.getState(), id);
+        // }
+        //
+        // fetchOperators() {
+        //     fetchOperators((operators) => {
+        //         this.setState({operators});
+        //     }, (error) => {
+        //         alert(error);
+        //     })(this.context.store.getState());
+        // }
+        //
+        // invite(id) {
+        //     invite(
+        //         this.context.store.getState(),
+        //         this.context.store.dispatch,
+        //         this.state.lineId,
+        //         id
+        //     );
+        // }
+        //
+        // onOperatorsPopupOpening(lineId) {
+        //     this.setState({
+        //         lineId: lineId
+        //     });
+        // }
+
+    }

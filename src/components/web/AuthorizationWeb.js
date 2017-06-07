@@ -43,6 +43,7 @@ class AuthorizationWeb extends React.Component {
         this.props.state.error ?
           this.props.state.error : ''
       }
+      <form onSubmit={this.login.bind(this)} action="/client">
       <p>
         <input type="text" name="login"
                onChange={this.loginChanged.bind(this)}
@@ -53,8 +54,9 @@ class AuthorizationWeb extends React.Component {
                 onChange={this.passwordChanged.bind(this)}
                 value={this.props.state.password}
       /></p>
-      <a href="#" onClick={this.login.bind(this)} className="button">
-        Войти</a>
+      <button type="submit" className="button">
+        Войти</button>
+      </form>
     </div>;
   }
 }

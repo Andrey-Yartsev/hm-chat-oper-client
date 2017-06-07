@@ -1,27 +1,69 @@
-.cols {
-display: table;
-width: 100%;
+/*layout*/
+.col.lines {
+overflow-x: hidden;
+overflow-y: scroll;
+width: 300px;
 }
-.col {
-width: 50%;
-display: table-cell;
-vertical-align: top;
+/*bar*/
+.lines {
 box-sizing: border-box;
 }
-.col {
-padding-right: 20px;
+.lines.list li {
+cursor: pointer;
+padding: 10px;
+border-bottom: 1px solid #EDEDED;
+position: relative;
 }
-.lines .newMessagesCount {
-width: 25px;
-height: 25px;
+
+.lines li.current {
+background: #42a5f6 !important;
+}
+.lines li.current a,
+.lines li.current a .lastMessage .text,
+.lines li.current a .lastMessage .date {
+color: #fff !important;
+}
+.lines li a {
+color: #000;
+text-decoration: none;
+}
+.lines li a .name {
+font-weight: bold;
+margin-bottom: 7px;
+}
+.lines li a .lastMessage .text {
+color: #999;
+}
+.lines li a .lastMessage .date {
+position: absolute;
+right: 10px;
+top: 10px;
+color: #999;
+}
+.lines li:hover {
+background: #EDEDED;
+color: #fff;
+}
+.lines h2, .list .lines li {
+margin: 0;
+padding: 7px 10px;
+}
+.lines h2 {
+font-size: 12px;
+background: #ccc;
+}
+
+.unread {
+width: 10px;
+height: 10px;
 text-align: center;
 line-height: 23px;
 border-radius: 20px;
 color: #fff;
 background: #e59e1c;
 position: absolute;
-top: -5px;
-right: 0;
+top: 5px;
+right: 5px;
 animation: fadein 1s;
 }
 

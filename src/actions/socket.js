@@ -1,38 +1,42 @@
 import config from '../config';
 import fetchInvites from './fetchInvites';
 import initLines from './lines/init';
-import notify from './notify';
+import newMessage from './message/newMessage';
 
-export default (dispatch, operToken) => {
-  const socket = require('socket.io-client')('http://' + config.serverHost + ':' + config.socketPort);
-  socket.on('connect', function () {
-    console.log('socket connected');
-    console.log('emit operConnect ' + operToken);
-    socket.emit('operConnect', {
-      token: operToken
+export default (store, operToken) => {
+    const socket = require('socket.io-client')('http://' + config.serverHost + ':' + config.socketPort);
+    const dispatch = store.dispatch;
+    socket.on('connect', function () {
+        socket.emit('operConnect', {
+            token: operToken
+        });
     });
-  });
-  socket.on('newMessage', function (message) {
-    // notify(message.text);
-    dispatch({
-      type: 'NEW_MESSAGE',
-      message
+    socket.on('newMessage', function (message) {
+        newMessage(operToken, store.getState(), dispatch, message);
     });
-    dispatch({
-      type: 'ADD_LINE_NEW_MESSAGES_COUNT',
-      lineId: message.line
+    socket.on('lineDropped', function (r) {
+        initLines(operToken, dispatch);
     });
-  });
-  socket.on('lineDropped', function (r) {
-    initLines(operToken, dispatch);
-  });
-  socket.on('linePicked', function (r) {
-    initLines(operToken, dispatch);
-  });
-  socket.on('newInvite', function (r) {
-    fetchInvites(dispatch, operToken);
-  });
-  socket.on('disconnect', function () {
-    console.log('disconnect');
-  });
+    socket.on('linePicked', function (r) {
+        initLines(operToken, dispatch);
+    });
+    socket.on('linesChanged', function (r) {
+        initLines(operToken, dispatch);
+    });
+    socket.on('newInvite', function (r) {
+        fetchInvites(dispatch, operToken);
+        const notification = new Notification('Новое приглашение в чат', {
+                body: 'Нажмите, что бы открыть',
+                icon: '/icon.png'
+            }
+        );
+        notification.onclick = () => {
+            window.location = '/';
+            notification.close();
+        }
+
+    });
+    socket.on('disconnect', function () {
+        console.log('disconnect');
+    });
 };

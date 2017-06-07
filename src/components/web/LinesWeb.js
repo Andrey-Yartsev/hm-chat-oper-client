@@ -23,15 +23,14 @@ class LinesWeb extends React.Component {
     const rows = [];
     for (let line of this.props.lines) {
       rows.push(<LineRow
+        isCurrent={this.props.currentLine === line._id}
         isNew={this.props.isNew}
         pick={this.pick.bind(this)}
-        drop={this.drop.bind(this)}
-        onOperatorsPopupOpening={this.onOperatorsPopupOpening.bind(this)}
         key={line._id}
         {...line}
       />);
     }
-    return <div className="col">
+    return <div className="linesGroup">
       <h2>{this.props.title}</h2>
       <ul>{rows}</ul>
     </div>;

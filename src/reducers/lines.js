@@ -5,6 +5,8 @@ const getLine = (lines, id) => {
   return false;
 };
 
+
+
 export default (state = {}, action) => {
   let newState;
   switch (action.type) {
@@ -21,17 +23,17 @@ export default (state = {}, action) => {
       return Object.assign({}, state, {
         newLines: action.lines
       });
-    case 'ADD_LINE_NEW_MESSAGES_COUNT':
-      newState = Object.assign({}, state);
-      let line = getLine(newState.lines, action.lineId);
-      if (!line) line = getLine(newState.newLines, action.lineId);
-      if (!line) throw new Error('line not found');
-      if (!line['count']) {
-        line.count = 1;
-      } else {
-        line.count++;
-      }
-      return newState;
+    // case 'ADD_LINE_NEW_MESSAGES_COUNT':
+    //   newState = Object.assign({}, state);
+    //   //let line = getLine(newState.lines, action.lineId);
+    //   let line = getLine(newState.newLines.concat(newState.lines), action.lineId);
+    //   if (!line) throw new Error('line not found');
+    //   if (!line['count']) {
+    //     line.count = 1;
+    //   } else {
+    //     line.count++;
+    //   }
+    //   return newState;
     default:
       return state;
   }

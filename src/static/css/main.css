@@ -1,5 +1,9 @@
 body {
 margin: 0;
+font-size: 12px;
+cursor: default;
+}
+body, textarea {
 font-family: Raleway;
 }
 html, body, #root {
@@ -23,11 +27,19 @@ font-family: Verdana, sans-serif;
 }
 .pageWrapper {
 width: 100%;
+background: #ccc;
 }
 .block {
+background: #fff;
 margin: 0 auto;
 width: 800px;
 position: relative;
+}
+.content {
+height: calc(100vh - 47px);
+}
+.content > div {
+height: 100px;
 }
 .icon i {
 width: 15px;
@@ -39,3 +51,4 @@ margin-right: 7px;
 .pageWrapper {
 height: 100%;
 }
+

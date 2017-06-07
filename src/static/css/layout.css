@@ -1,0 +1,16 @@
+.cols {
+}
+.col {
+height: calc(100vh - 47px);
+float: left;
+vertical-align: top;
+box-sizing: border-box;
+}
+.col.main {
+padding-top: 30px;
+text-align: center;
+}
+.col.main,.col.chat {
+width: 500px;
+}
+

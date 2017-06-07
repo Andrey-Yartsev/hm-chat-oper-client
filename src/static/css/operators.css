@@ -2,4 +2,10 @@
 padding-left: 80px;
 background: url(../img/operator.png) no-repeat 5px -5px;
 background-size: 70px;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+#operatorsPopup .list li .name {
+margin-bottom: 3px;
 }

@@ -3,11 +3,11 @@ import React from 'react';
 import '../../static/css/popup.css';
 import '../../static/css/invites.css';
 
-class OperatorsPopupWeb extends React.Component {
+class InvitesPopupWeb extends React.Component {
 
   pick(id) {
     this.props.pick(id);
-    window.location = '#';
+    window.location = '/client/chat/' + id;
   }
 
   render() {
@@ -34,4 +34,4 @@ class OperatorsPopupWeb extends React.Component {
 
 }
 
-export default OperatorsPopupWeb;
+export default InvitesPopupWeb;

@@ -1,20 +1,83 @@
 .chat .form .button {
 width: 200px;
 }
-.chat .form textarea {
-width: 100%;
-height: 100px;
+.chat {
+position: relative;
+background: url(../img/bg.jpg);
+background-size: cover;
+}
+.chatHeader {
+box-sizing: border-box;
+height: 40px;
+background: #fff;
+border-bottom: 1px solid #EDEDED;
+}
+.chatHeader > .title {
+padding: 12px 20px;
+font-weight: bold;
+font-size: 14px;
+}
+.chatHeader .button {
+padding: 12px 20px;
+font-weight: bold;
+}
+.chatMenu {
+position: absolute;
+top: 0;
+right: 0;
+}
+.chatMenu .button {
+display: inline-block;
 }
 .chatMessages {
+box-sizing: border-box;
 margin: 0;
-margin-top: 20px;
-height: calc(100vh - 107px);
+padding: 20px;
+height: calc(100vh - 87px);
 overflow: auto;
 }
+.chatMessages.picked {
+height: calc(100vh - 190px);
+}
+.list.chatMessages li {
+position: relative;
+background: #fff;
+border-radius: 5px;
+border-bottom: #999;
+margin-bottom: 5px;
+padding: 10px;
+}
+.list.chatMessages li.mine {
+background: #bbe7f7;
+border-color: #65979e;
+}
+.list.chatMessages li.mine .date {
+color: #65979e;
+}
+
+.triangle {
+position: absolute;
+bottom: 0;
+width: 0;
+height: 0;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+border-bottom: 10px solid #fff;
+}
+.mine .triangle {
+border-bottom-color: #bbe7f7;
+right: -10px;
+}
+.list.chatMessages li:not(.mine) .triangle {
+left: -10px;
+}
+
 .chat .date {
 color: #42a5f6;
-margin-top: 5px;
 font-size: 12px;
+position: absolute;
+bottom: 10px;
+right: 10px;
 }
 .chat .login {
 font-weight: bold;
@@ -22,4 +85,223 @@ margin-bottom: 5px;
 }
 .chat .message {
 font-size: 14px;
+}
+.chat .form {
+position: relative;
+}
+.chat .send {
+z-index: 10;
+position: absolute;
+top: 10px;
+right: 10px;
+width: 30px;
+height: 30px;
+cursor: pointer;
+background: url(../img/send.svg);
+}
+.chat .send:hover {
+background: url(../img/send-hover.svg);
+}
+.chat textarea {
+position: absolute;
+width: 100%;
+height: 103px;
+padding: 10px;
+box-sizing: border-box;
+border: 0;
+border-top: 1px solid rgba(0, 0, 0, .3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cssload-thecube {
+width: 73px;
+height: 73px;
+margin: 0 auto;
+margin-top: 49px;
+position: relative;
+transform: rotateZ(45deg);
+-o-transform: rotateZ(45deg);
+-ms-transform: rotateZ(45deg);
+-webkit-transform: rotateZ(45deg);
+-moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+position: relative;
+transform: rotateZ(45deg);
+-o-transform: rotateZ(45deg);
+-ms-transform: rotateZ(45deg);
+-webkit-transform: rotateZ(45deg);
+-moz-transform: rotateZ(45deg);
+}
+.cssload-thecube .cssload-cube {
+float: left;
+width: 50%;
+height: 50%;
+position: relative;
+transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+}
+.cssload-thecube .cssload-cube:before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #bbe7f7;
+animation: cssload-fold-thecube 2.76s infinite linear both;
+-o-animation: cssload-fold-thecube 2.76s infinite linear both;
+-ms-animation: cssload-fold-thecube 2.76s infinite linear both;
+-webkit-animation: cssload-fold-thecube 2.76s infinite linear both;
+-moz-animation: cssload-fold-thecube 2.76s infinite linear both;
+transform-origin: 100% 100%;
+-o-transform-origin: 100% 100%;
+-ms-transform-origin: 100% 100%;
+-webkit-transform-origin: 100% 100%;
+-moz-transform-origin: 100% 100%;
+}
+.cssload-thecube .cssload-c2 {
+transform: scale(1.1) rotateZ(90deg);
+-o-transform: scale(1.1) rotateZ(90deg);
+-ms-transform: scale(1.1) rotateZ(90deg);
+-webkit-transform: scale(1.1) rotateZ(90deg);
+-moz-transform: scale(1.1) rotateZ(90deg);
+}
+.cssload-thecube .cssload-c3 {
+transform: scale(1.1) rotateZ(180deg);
+-o-transform: scale(1.1) rotateZ(180deg);
+-ms-transform: scale(1.1) rotateZ(180deg);
+-webkit-transform: scale(1.1) rotateZ(180deg);
+-moz-transform: scale(1.1) rotateZ(180deg);
+}
+.cssload-thecube .cssload-c4 {
+transform: scale(1.1) rotateZ(270deg);
+-o-transform: scale(1.1) rotateZ(270deg);
+-ms-transform: scale(1.1) rotateZ(270deg);
+-webkit-transform: scale(1.1) rotateZ(270deg);
+-moz-transform: scale(1.1) rotateZ(270deg);
+}
+.cssload-thecube .cssload-c2:before {
+animation-delay: 0.35s;
+-o-animation-delay: 0.35s;
+-ms-animation-delay: 0.35s;
+-webkit-animation-delay: 0.35s;
+-moz-animation-delay: 0.35s;
+}
+.cssload-thecube .cssload-c3:before {
+animation-delay: 0.69s;
+-o-animation-delay: 0.69s;
+-ms-animation-delay: 0.69s;
+-webkit-animation-delay: 0.69s;
+-moz-animation-delay: 0.69s;
+}
+.cssload-thecube .cssload-c4:before {
+animation-delay: 1.04s;
+-o-animation-delay: 1.04s;
+-ms-animation-delay: 1.04s;
+-webkit-animation-delay: 1.04s;
+-moz-animation-delay: 1.04s;
+}
+
+
+
+@keyframes cssload-fold-thecube {
+0%, 10% {
+transform: perspective(136px) rotateX(-180deg);
+opacity: 0;
+}
+25%,
+75% {
+transform: perspective(136px) rotateX(0deg);
+opacity: 1;
+}
+90%,
+100% {
+transform: perspective(136px) rotateY(180deg);
+opacity: 0;
+}
+}
+
+@-o-keyframes cssload-fold-thecube {
+0%, 10% {
+-o-transform: perspective(136px) rotateX(-180deg);
+opacity: 0;
+}
+25%,
+75% {
+-o-transform: perspective(136px) rotateX(0deg);
+opacity: 1;
+}
+90%,
+100% {
+-o-transform: perspective(136px) rotateY(180deg);
+opacity: 0;
+}
+}
+
+@-ms-keyframes cssload-fold-thecube {
+0%, 10% {
+-ms-transform: perspective(136px) rotateX(-180deg);
+opacity: 0;
+}
+25%,
+75% {
+-ms-transform: perspective(136px) rotateX(0deg);
+opacity: 1;
+}
+90%,
+100% {
+-ms-transform: perspective(136px) rotateY(180deg);
+opacity: 0;
+}
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+0%, 10% {
+-webkit-transform: perspective(136px) rotateX(-180deg);
+opacity: 0;
+}
+25%,
+75% {
+-webkit-transform: perspective(136px) rotateX(0deg);
+opacity: 1;
+}
+90%,
+100% {
+-webkit-transform: perspective(136px) rotateY(180deg);
+opacity: 0;
+}
+}
+
+@-moz-keyframes cssload-fold-thecube {
+0%, 10% {
+-moz-transform: perspective(136px) rotateX(-180deg);
+opacity: 0;
+}
+25%,
+75% {
+-moz-transform: perspective(136px) rotateX(0deg);
+opacity: 1;
+}
+90%,
+100% {
+-moz-transform: perspective(136px) rotateY(180deg);
+opacity: 0;
+}
 }
